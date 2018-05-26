@@ -1,0 +1,20 @@
+* Part 3: Services
+
+** Run your new load-balanced app
+
+  #+BEGIN_SRC shell-script
+    docker swarm init
+    docker stack deploy -c docker-compose.yml getstartedlab
+    # List the tasks for the service
+    docker service ps getstartedlab_web
+    # Tasks also show up if you just list all the containers on your system
+    docker container ls -q
+  #+END_SRC
+
+** Take down the app and the swarm
+
+  #+BEGIN_SRC shell-script
+    # Take the app down
+    docker stack rm getstartedlab
+    docker swarm leave --force
+  #+END_SRC
