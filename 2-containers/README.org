@@ -1,0 +1,13 @@
+* Part2: Containers
+
+** Build the app
+
+  #+BEGIN_SRC shell-script
+    docker build -t sei40kr/friendlyhello .
+  #+END_SRC
+
+** Run the app
+
+  #+BEGIN_SRC shell-script
+    docker run -p 4000:80 sei40kr/friendlyhello
+  #+END_SRC
